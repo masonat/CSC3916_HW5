@@ -50,7 +50,7 @@ class Register extends Component {
                     <Form.Label>Password</Form.Label>
                     <Form.Control onChange={this.updateDetails} value={this.state.details.password}  type="password" placeholder="Password" />
                 </Form.Group>
-                <Button onClick={this.register}>Register</Button>
+                <Button onClick={this.register}>Sign Up</Button>
             </Form>
         )
     }
