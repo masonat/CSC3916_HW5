@@ -26,15 +26,18 @@ export function submitLogin(data) {
             body: JSON.stringify(data),
             mode: 'cors'
         }).then((response) => {
-            if (!response.ok) {
-                throw Error(response.statusText);
-            }
             return response.json()
         }).then((res) => {
-            localStorage.setItem('username', data.username);
-            localStorage.setItem('token', res.token);
+            if(!res.success){
+                alert(res.msg)
+                return false;
+            }else {
+                localStorage.setItem('username', data.username);
+                localStorage.setItem('token', res.token);
 
-            dispatch(userLoggedIn(data.username));
+                dispatch(userLoggedIn(data.username));
+            }
+
         }).catch((e) => console.log(e));
     }
 }
