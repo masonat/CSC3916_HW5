@@ -28,10 +28,10 @@ export function submitLogin(data) {
         }).then((response) => {
             return response.json()
         }).then((res) => {
-            if(!res.success){
+            if (!res.success) {
                 alert(res.msg)
                 return false;
-            }else {
+            } else {
                 localStorage.setItem('username', data.username);
                 localStorage.setItem('token', res.token);
 

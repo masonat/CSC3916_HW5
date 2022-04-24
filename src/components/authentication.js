@@ -1,12 +1,12 @@
-import React, { Component} from 'react';
-import { connect } from 'react-redux'
+import React, {Component} from 'react';
+import {connect} from 'react-redux'
 import Login from './login';
 import Register from './register';
-import { logoutUser } from '../actions/authActions';
+import {logoutUser} from '../actions/authActions';
 
 class Authentication extends Component {
 
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
@@ -14,35 +14,38 @@ class Authentication extends Component {
         };
     }
 
-    componentDidMount(){
+    componentDidMount() {
 
     }
 
-    showLogin(){
+    showLogin() {
         this.setState({
             toggleReg: false
         });
     }
 
-    showReg(){
+    showReg() {
         this.setState({
             toggleReg: true
         });
     }
 
-    logout(){
+    logout() {
         this.props.dispatch(logoutUser());
     }
 
-    render(){
+    render() {
 
         const userNotLoggedIn = (
             <div>
-                <button onClick={this.showLogin.bind(this)}>Login</button><button onClick={this.showReg.bind(this)}>Register</button>
-                { this.state.toggleReg ? <Register /> : <Login /> }
+                <button onClick={this.showLogin.bind(this)}>Login</button>
+                <button onClick={this.showReg.bind(this)}>Register</button>
+                {this.state.toggleReg ? <Register/> : <Login/>}
             </div>
         );
-        const userLoggedIn = (<div>Logged in as: {this.props.username} <button onClick={this.logout.bind(this)}>Logout</button></div>);
+        const userLoggedIn = (<div>Logged in as: {this.props.username}
+            <button onClick={this.logout.bind(this)}>Logout</button>
+        </div>);
 
         return (
             <div>

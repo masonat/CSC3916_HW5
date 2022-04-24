@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux'
-import { fetchMovie } from "../actions/movieActions";
+import React, {useState} from 'react';
+import {useParams} from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import {fetchMovie} from "../actions/movieActions";
 import MovieDetail from "../components/moviedetail"
 
 // support routing
@@ -16,7 +16,7 @@ function Movie(props) {
         dispatch(fetchMovie(movieId));
     }
 
-    return (<MovieDetail movieId={movieId} />)
+    return (<MovieDetail movieId={movieId}/>)
 }
 
 export default Movie;
