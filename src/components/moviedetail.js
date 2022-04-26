@@ -4,7 +4,6 @@ import { setMovie } from '../actions/movieActions';
 import {connect} from "react-redux";
 import { Image } from 'react-bootstrap'
 import { Carousel } from 'react-bootstrap'
-import { Glyphicon } from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap';
 
 class MovieList extends Component {
@@ -45,7 +44,7 @@ class MovieList extends Component {
                             </div>
                             <Carousel.Caption>
                                 <h3>{movie.title}</h3>
-                                <Glyphicon glyph={'star'} /> {movie.avgRating} &nbsp;&nbsp; {movie.releaseDate}
+                                <h3> * {movie.avgRating} &nbsp;&nbsp; {movie.releaseDate}</h3>
                             </Carousel.Caption>
                         </Carousel.Item>)}
                 </Carousel>)
